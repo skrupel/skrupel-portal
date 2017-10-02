@@ -1,0 +1,247 @@
+/* CSS layout */
+body {
+	margin: 0;
+	padding: 0;
+	color: #999;
+	font-family: Sans-Serif;
+	font-size: 11px;
+	background-color: #000;
+	background-image: url('../images/bg.gif');
+	background-position:center top;
+	background-repeat:repeat-all;
+}
+#wrapper {
+                margin-top:2pt;
+	min-width:900px;
+	max-width:1200px;
+	margin:0 auto;
+	padding:0;
+	background-color: #333333;
+	border-color: #999999;
+	border-width:1px;
+	border-style:solid;
+}
+#masthead {
+	height: 120px;
+	margin:0;
+	position:relative;
+	margin-left:50px;
+	padding:0;
+	background-image:url(../images/logo.png);
+	background-position:left bottom;
+	background-repeat:no-repeat;
+}
+
+#masthead h1 {
+vertical-align:top; color:gray; font-size:26pt; font-family:pdark, starcraft, Times; font-weight:bolder; }
+
+#masthead h2 {
+display:none; color:silver; font-size:17pt; font-family:pdark, starcraft, Arial; font-weight:bold; }
+
+#top_nav {
+	height: 30px;
+	position:relative;
+	font-size:13px;
+	font-family:Sans-Serif;
+}
+
+#container {
+	min-width: 600px;
+}
+
+#left_col {
+	width: 170px;
+	float: left;
+	min-height:600px;
+}
+
+#right_col {
+	width: 170px;
+	float: right;
+	min-height:600px;
+}
+#left_col p , #right_col p {
+	padding: 0 10px 0 10px;
+}
+#left_col h3 , #right_col h3 {
+	font-size: 14px;
+	padding:0 0 0 20px;
+	margin:0;
+	background-color:#333;
+	height:30px;
+	line-height:30px;
+	color: gray;
+	font-weight:bold;
+}
+
+#page_content {
+	margin-left: 175px;
+	margin-right: 175px;
+	min-height:600px;
+	padding: 20px;
+	border: 1px solid #999999;
+	background-image:url('../images/bg.gif');
+	background-repeat:repeat-all;
+}
+
+#footer {
+	clear: both;
+	height: 65px;
+	background-repeat:repeat-x;	
+	text-align:center;
+}
+
+/* left and right main menus */
+ul.menu {
+	padding:0px 2px 2px 2px;
+	margin:0 0 20px 0;
+	background-position: center bottom;
+}
+ul.menu li {
+	list-style:none;
+}
+ul.menu li a {
+	list-style:none;
+	padding-left: 25px;
+	display:block;
+	height:20px;
+	line-height:20px;
+	border:none;
+	vertical-align:middle;
+	font-family:Sans-Serif;
+}
+ul.menu li a:hover, ul.menu li a:active, ul.menu li a:focus {
+	line-height:17px;
+}
+/* left main menu end */
+
+/* Top menu */
+ul#topmenu {
+	padding:0;
+	margin:0;
+	text-align: center;
+	height:22px;
+	line-height:30px;
+}
+ul#topmenu li {
+	display: inline;
+	list-style:none;
+	text-align: center;
+	padding:0;
+	margin:0;
+}
+ul#topmenu li a {
+	vertical-align:middle;
+	list-style:none;
+	height:22px;
+	line-height:22px;
+	border:none;
+	padding: 5px 25px 5px 25px;
+	background-repeat: repeat-x;
+}
+ul#topmenu li a:hover, ul#topmenu li a:active, ul#topmenu li a:focus {
+	background-repeat: repeat-x;	
+}
+/* Top menu end */
+
+/* Footer menu */
+ul#footermenu {
+	padding:0;
+	text-align: center;
+	height:30px;
+	line-height:30px;
+	padding-top:30px;
+}
+ul#footermenu li {
+	list-style:none;
+	display: inline;
+	text-align: center;
+	padding:0;
+	margin:0;
+	height:30px;
+}
+ul#footermenu li a {
+	color: gray;
+	list-style:none;
+	height:30px;
+	border:none;
+	padding: 5px 15px 8px 15px;
+	font-variant:small-caps;
+} 
+/* Footer menu end */
+#designed_by {
+	text-align:center;
+	color:silver;
+	font-size:12px;
+}
+#designed_by a {
+	padding:0;
+	margin:0;
+	text-align:center;
+	font-size:13px;
+	color:lightsteelblue;
+}
+#designed_by a:hover {
+	color:snow;
+}
+
+/* links */
+a {
+	color:lightsteelblue;
+	text-decoration:none;
+	border:none;
+}
+a:hover {
+	color:gray; 
+	text-decoration:underline;
+	border:none;
+}
+
+#details {
+  position: absolute;
+  top     : 20px;
+  left    : 10px;
+  display : none;
+  z-index : 100;
+  color:silver;
+  background-color:black;
+padding: 20px;
+border: 6pt solid #0000AA;
+height:350px; width:400px;
+overflow:auto;
+}
+
+input, textarea, select {
+color:black; background-color:#cccccc;}
+
+        td.forumdunkel {
+            color:silver;
+            background-color:#404040;
+            border-color:#595959 #272727 #272727 #595959;
+            border-style:solid;
+            border-width:2 2 2 2;
+        }
+        td.forummittel {
+            color:snow;
+            background-color:#606060;
+            border-color:#797979 #474747 #474747 #797979;
+            border-style:solid;
+            border-width:2 2 2 2;
+        }
+        td.forumhell{
+            color:white;
+            background-color:#808080;
+            border-color:#999999 #676767 #676767 #999999;
+            border-style:solid;
+            border-width:2 2 2 2;
+        }
+
+td.forumdunkel a, td.forummittel a, td.forumhell a {
+color:lightskyblue; font-weight:bold; }
+
+h1, h2, h3 { 
+font-family: Verdana, pdark, Times; 
+color:#ffffff;
+font-size:15pt;
+}
+h4, h5, h6 { font-family:pdark, Verdana, Times; }

@@ -1,0 +1,7 @@
+Grundsätzlich ist es erlaubt, Änderungen am Source vozunehmen. Es ist jedoch nicht erlaubt, Änderungen am Footer vorzunehmen
+oder auf andere Art die Copyright-Hinweise und Links zu entfernen oder deren Sichtbarkeit einzuschränken.
+
+In der Grundversion ist die Shadowbox (www.shadowbox-js.com) enthalten. Die entsprechende Lizenz muss ebenfalls anerkannt
+oder die Shadowbox ausgebaut werden.
+
+Für zusätzliche aufgeschaltete Templates gelten ebenso die Lizenzen des jeweiligen Erstellers.
