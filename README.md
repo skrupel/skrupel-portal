@@ -92,6 +92,8 @@ Sonstiges
 - Profil für jeden Spieler
 - Besucher-Statistiken im (ausgelagerten) Admin-Bereich
 - Panel zur Erstellung der inc/conf.php
+- Bei der Spielerstellung soll es möglich sein, die Einstellungen nachträglich zu ändern
+- Statt der "wartet auf Spieler"-Funktion möglich sein, bestimmte Spieler "einzuladen"
 
 ### Gestrichene Funktionen
 
