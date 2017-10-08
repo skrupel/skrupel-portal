@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal_games` (
                    `user_10_x` int(10) unsigned,
                    `user_10_y` int(10) unsigned,
                    PRIMARY KEY  (`id`)
-                 ) TYPE=MyISAM AUTO_INCREMENT=1 ;
+                 ) ENGINE=MyISAM AUTO_INCREMENT=1 ;
 
 
 CREATE TABLE IF NOT EXISTS `skrupel_portal_linklist` (
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal_messages` (
   `empfaenger` int(11) NOT NULL default '0',
   `title` text NOT NULL,
   `text` longtext NOT NULL,
-  `time` varchar(50) NOT NULL default '0',
+  `time` TIMESTAMP NOT NULL default '0',
   `status` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
@@ -116,11 +116,11 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal_messages` (
 
 
 INSERT INTO `skrupel_portal_messages` (`absender`, `empfaenger`, `title`, `text`, `time`, `status`) VALUES
-(0, 0, 'Willkommen im Portal!', 'Viel Spa� mit dem neuen Portal!', '".time()."', 0) ;
+(0, 0, 'Willkommen im Portal!', 'Viel Spaß mit dem neuen Portal!', NOW(), 0) ;
 
-ALTER TABLE `skrupel_user` ADD `portal_layout` CHAR(15) NOT NULL default 'classic' ;
+ALTER TABLE `skrupel_user` ADD `portal_layout` CHAR(20) NOT NULL default 'classic' ;
 
-ALTER TABLE `skrupel_user` ADD `homepage` TINYTEXT NOT NULL ;
+ALTER TABLE `skrupel_user` ADD `homepage` TINYTEXT NOT NULL DEFAULT '' ;
 
 
 CREATE TABLE IF NOT EXISTS `skrupel_portal` (
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal` (
   `version` varchar(10) NOT NULL default '2.0.2',
   `servername` text,
   `seitentitel` text NOT NULL,
-  `template` varchar(50) NOT NULL default 'classic',
+  `template` char(20) NOT NULL default 'classic',
   `keywords` longtext NOT NULL,
   `description` longtext NOT NULL,
   `encoding` varchar(20) NOT NULL default 'iso-8859-1',
@@ -148,15 +148,12 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 
-INSERT INTO `skrupel_portal` (`version`, `patch`, `servername`, `seitentitel`, `template`, `keywords`, `description`, `encoding`, `cookie_dauer`, `cookie_dauer_2`, `news_limit`, `impressum_settings`) VALUES
-('2.0', '0', 'Skrupel-Server', 'Willkommen im Portal', 'classic', 'browsergame, skrupel, portal', 'Das Portal zum Game.', 'iso-8859-1', '7', '86400', '3', '10') ;
+INSERT INTO `skrupel_portal` (`version`, `servername`, `seitentitel`, `template`, `keywords`, `description`, `encoding`, `cookie_dauer`, `cookie_dauer_2`, `news_limit`, `impressum_settings`) VALUES
+('2.0', 'Skrupel-Server', 'Willkommen im Portal', 'classic', 'browsergame, skrupel, portal', 'Das Portal zum Game.', 'iso-8859-1', '7', '86400', '3', '10') ;
 
 
 ALTER TABLE `skrupel_user` ADD `portal_bann` varchar(1) NOT NULL default '0' ;
 
 ALTER TABLE `skrupel_user` ADD `portal_activity` char(20) NOT NULL default '0' ;
 
-ALTER TABLE `skrupel_user` ADD `profil-text` longtext NOT NULL ;
-
-
-
+ALTER TABLE `skrupel_user` ADD `profil_text` longtext NOT NULL DEFAULT '' ;
