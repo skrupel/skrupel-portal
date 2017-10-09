@@ -25,6 +25,7 @@ a:hover {
 
 h1 {
     letter-spacing: 2px;
+    text-align: center;
 }
 
 h1, h2, h3 {
@@ -40,8 +41,14 @@ h4, h5, h6 {
 input, textarea, select, button {
     color: #ccc;
     font-family: Verdana, sans-serif;
+    font-size: 11px;
     background-color: #555;
     border-color: #666;
+    padding: 2px 4px;
+}
+
+button {
+    padding: 3px 8px;
 }
 
 hr {
@@ -51,7 +58,7 @@ hr {
 }
 
 #wrapper {
-    width: 980px;
+    width: 1020px;
     margin: 0 auto;
     padding: 0;
 }
@@ -241,12 +248,24 @@ ul#footermenu li a {
     overflow: auto;
 }
 
+.form-error {
+    border: 2px solid red;
+    color: lightcoral;
+}
+
+.msg-error {
+    border: 2px solid red;
+    background: lightcoral;
+    color: #111;
+    padding: 7px;
+}
+
 td.forumdunkel {
     color: silver;
     background-color: #404040;
     border-color: #595959 #272727 #272727 #595959;
     border-style: solid;
-    border-width: 2 2 2 2;
+    border-width: 2px;
 }
 
 td.forummittel {
@@ -254,7 +273,7 @@ td.forummittel {
     background-color: #606060;
     border-color: #797979 #474747 #474747 #797979;
     border-style: solid;
-    border-width: 2 2 2 2;
+    border-width: 2px;
 }
 
 td.forumhell {
@@ -262,7 +281,7 @@ td.forumhell {
     background-color: #808080;
     border-color: #999999 #676767 #676767 #999999;
     border-style: solid;
-    border-width: 2 2 2 2;
+    border-width: 2px;
 }
 
 td.forumdunkel a, td.forummittel a, td.forumhell a {
