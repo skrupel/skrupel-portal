@@ -159,7 +159,7 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
             }
         }
 
-        $file = "inc/conf.php";
+        $file = 'inc/conf.php';
         touch($file);
         if (is_writable($file)) {
             echo '<p><span style="color: lightgreen">Schreibrechte f&uuml;r '.$file.' existieren.</span></p>';
@@ -269,7 +269,7 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
             if ($_POST['version'] == 0) {
                 // Neuinstallation
 
-                $sql = "CREATE TABLE IF NOT EXISTS `".$_POST['skrupel_portal_games']."` (
+                $sql = "CREATE TABLE IF NOT EXISTS `{$_POST['skrupel_portal_games']}` (
                    `id` int(11) NOT NULL auto_increment,
                    `spiel_name` varchar(50) NOT NULL default '',
                    `siegbedingungen` tinyint(1) unsigned NOT NULL default '0',
@@ -360,10 +360,10 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
                 mysql_query($sql, $conn);
             }
 
-            if (2 < $_POST["version"]) {
+            if (2 < $_POST['version']) {
                 // Neuinstallation, Tiramon-Portal
 
-                $sql = "CREATE TABLE IF NOT EXISTS `".$_POST['skrupel_portal_linklist']."` (
+                $sql = "CREATE TABLE IF NOT EXISTS `{$_POST['skrupel_portal_linklist']}` (
   `id` int(5) unsigned NOT NULL auto_increment,
   `title` tinytext NOT NULL,
   `url` tinytext NOT NULL,
@@ -373,11 +373,11 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ";
                 mysql_query($sql, $conn);
 
-                $sql = "INSERT INTO `".$_POST['skrupel_portal_linklist']."` (`title`, `url`, `views`, `description`) VALUES
+                $sql = "INSERT INTO `{$_POST['skrupel_portal_linklist']}` (`title`, `url`, `views`, `description`) VALUES
 ('Skrupel.de', 'http://www.skrupel.de', '7', 'Die offizielle Skrupel-Seite.')";
                 mysql_query($sql, $conn);
 
-                $sql = "CREATE TABLE IF NOT EXISTS `".$_POST['skrupel_portal_messages']."` (
+                $sql = "CREATE TABLE IF NOT EXISTS `{$_POST['skrupel_portal_messages']}` (
   `id` int(11) unsigned NOT NULL auto_increment,
   `absender` int(11) NOT NULL default '0',
   `empfaenger` int(11) NOT NULL default '0',
@@ -389,7 +389,7 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ";
                 mysql_query($sql, $conn);
 
-                $sql = "INSERT INTO `".$_POST['skrupel_portal_messages']."` (`absender`, `empfaenger`, `title`, `text`, `time`, `status`) VALUES
+                $sql = "INSERT INTO `{$_POST['skrupel_portal_messages']}` (`absender`, `empfaenger`, `title`, `text`, `time`, `status`) VALUES
 (0, 0, 'Willkommen im Portal!', 'Viel Spaß mit dem neuen Portal!', '".time()."', 0) ";
                 mysql_query($sql, $conn);
 
@@ -400,11 +400,11 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
             if ($_POST['version'] < 3) {
                 // Neuinstallation, Tiramon-Portal, SpacePirates-Portal v1.0
 
-                $sql = "ALTER TABLE `$skrupel_user` ADD `homepage` TINYTEXT NOT NULL DEFAULT ''";
+                $sql = "ALTER TABLE `$skrupel_user` ADD `homepage` TINYTEXT DEFAULT NULL";
                 mysql_query($sql, $conn);
             }
 
-            $sql = "CREATE TABLE IF NOT EXISTS `".$_POST['skrupel_portal']."` (
+            $sql = "CREATE TABLE IF NOT EXISTS `{$_POST['skrupel_portal']}` (
   `id` int(11) NOT NULL auto_increment,
   `version` varchar(10) NOT NULL default '2.0.2',
   `servername` text,
@@ -429,7 +429,7 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1";
             mysql_query($sql, $conn);
 
-            $sql = "INSERT INTO `".$_POST['skrupel_portal']."` (`version`, `servername`, `seitentitel`, `template`, `keywords`, `description`, `encoding`, `cookie_dauer`, `cookie_dauer_2`, `news_limit`, `impressum_settings`) VALUES
+            $sql = "INSERT INTO `{$_POST['skrupel_portal']}` (`version`, `servername`, `seitentitel`, `template`, `keywords`, `description`, `encoding`, `cookie_dauer`, `cookie_dauer_2`, `news_limit`, `impressum_settings`) VALUES
 ('2.0.2', 'Skrupel-Server', 'Willkommen im Portal', 'classic', 'browsergame, skrupel, portal', 'Das Portal zum Game.', 'iso-8859-1', '7', '86400', '3', '10') ";
             mysql_query($sql, $conn);
 
@@ -440,7 +440,7 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
             mysql_query($sql, $conn);
 
             if (!db_column_exists('profil_text', $skrupel_user, $conn)) {
-                $sql = "ALTER TABLE `$skrupel_user` ADD `profil_text` longtext NOT NULL DEFAULT ''";
+                $sql = "ALTER TABLE `$skrupel_user` ADD `profil_text` LONGTEXT DEFAULT NULL";
                 mysql_query($sql, $conn);
             }
 
