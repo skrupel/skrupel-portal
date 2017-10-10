@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal_games` (
                    `user_10_x` int(10) unsigned,
                    `user_10_y` int(10) unsigned,
                    PRIMARY KEY  (`id`)
-                 ) ENGINE=MyISAM AUTO_INCREMENT=1 ;
+                 ) ENGINE=MyISAM AUTO_INCREMENT=1;
 
 
 CREATE TABLE IF NOT EXISTS `skrupel_portal_linklist` (
@@ -95,11 +95,11 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal_linklist` (
   `views` char(10) NOT NULL default '0',
   `description` text NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13;
 
 
 INSERT INTO `skrupel_portal_linklist` (`title`, `url`, `views`, `description`) VALUES
-('Skrupel.de', 'http://www.skrupel.de', '7', 'Die offizielle Skrupel-Seite.') ;
+('Skrupel.de', 'http://www.skrupel.de', '7', 'Die offizielle Skrupel-Seite.');
 
 
 CREATE TABLE IF NOT EXISTS `skrupel_portal_messages` (
@@ -111,16 +111,16 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal_messages` (
   `time` TIMESTAMP NOT NULL default '0',
   `status` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49;
 
 
 
 INSERT INTO `skrupel_portal_messages` (`absender`, `empfaenger`, `title`, `text`, `time`, `status`) VALUES
-(0, 0, 'Willkommen im Portal!', 'Viel Spaß mit dem neuen Portal!', NOW(), 0) ;
+(0, 0, 'Willkommen im Portal!', 'Viel Spaß mit dem neuen Portal!', NOW(), 0);
 
-ALTER TABLE `skrupel_user` ADD `portal_layout` CHAR(20) NOT NULL default 'classic' ;
+ALTER TABLE `skrupel_user` ADD `portal_layout` CHAR(20) NOT NULL default 'classic';
 
-ALTER TABLE `skrupel_user` ADD `homepage` TINYTEXT NOT NULL DEFAULT '' ;
+ALTER TABLE `skrupel_user` ADD `homepage` TINYTEXT DEFAULT NULL;
 
 
 CREATE TABLE IF NOT EXISTS `skrupel_portal` (
@@ -145,15 +145,15 @@ CREATE TABLE IF NOT EXISTS `skrupel_portal` (
   `impressum_settings` char(2) NOT NULL default '10',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `version` (`version`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2;
 
 
 INSERT INTO `skrupel_portal` (`version`, `servername`, `seitentitel`, `template`, `keywords`, `description`, `encoding`, `cookie_dauer`, `cookie_dauer_2`, `news_limit`, `impressum_settings`) VALUES
-('2.0', 'Skrupel-Server', 'Willkommen im Portal', 'classic', 'browsergame, skrupel, portal', 'Das Portal zum Game.', 'iso-8859-1', '7', '86400', '3', '10') ;
+('2.0', 'Skrupel-Server', 'Willkommen im Portal', 'classic', 'browsergame, skrupel, portal', 'Das Portal zum Game.', 'iso-8859-1', '7', '86400', '3', '10');
 
 
-ALTER TABLE `skrupel_user` ADD `portal_bann` varchar(1) NOT NULL default '0' ;
+ALTER TABLE `skrupel_user` ADD `portal_bann` VARCHAR(1) NOT NULL default '0';
 
-ALTER TABLE `skrupel_user` ADD `portal_activity` char(20) NOT NULL default '0' ;
+ALTER TABLE `skrupel_user` ADD `portal_activity` CHAR(20) NOT NULL default '0';
 
-ALTER TABLE `skrupel_user` ADD `profil_text` longtext NOT NULL DEFAULT '' ;
+ALTER TABLE `skrupel_user` ADD `profil_text` LONGTEXT DEFAULT NULL;
