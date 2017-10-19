@@ -1,0 +1,40 @@
+<?php
+
+$config = PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules([
+        'indentation_type' => true,
+        'include' => true,
+        'single_quote' => true,
+        'no_closing_tag' => true,
+        'full_opening_tag' => true,
+        'single_blank_line_at_eof' => true,
+        'heredoc_to_nowdoc' => true,
+        'align_multiline_comment' => true,
+        'blank_line_before_statement' => true,
+        'no_unneeded_final_method' => true,
+        'list_syntax' => ['syntax' => 'long'],
+        'no_useless_return' => true,
+        'no_trailing_whitespace' => true,
+        'no_spaces_after_function_name' => true,
+        'no_spaces_inside_parenthesis' => true,
+        'trim_array_spaces' => true,
+        'method_argument_space' => true,
+        'elseif' => true,
+        'lowercase_keywords' => true,
+        'lowercase_constants' => true,
+        'standardize_not_equals' => true,
+        'concat_space' => ['spacing' => 'none'],
+        'switch_case_space' => true,
+        'object_operator_without_whitespace' => true,
+        'ternary_operator_spaces' => true,
+        'unary_operator_spaces' => true,
+        'binary_operator_spaces' => true
+    ])
+    ->setFinder(
+        PhpCsFixer\Finder::create()
+            ->in(__DIR__)
+    )
+;
+
+return $config;
