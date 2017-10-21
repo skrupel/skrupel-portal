@@ -209,7 +209,6 @@ header('Pragma: cache');
                 <ul class="menu">
                     <li><a href="about.php">Server-Info</a></li>
                     <li><a href="features.php">Erweiterungen</a></li>
-                    <li><a href="source.php">Portal-Info</a></li>
                     <li><a href="linklist.php">Unsere Partner</a></li>
                 </ul>
             </div>

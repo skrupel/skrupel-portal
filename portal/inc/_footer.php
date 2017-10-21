@@ -12,7 +12,7 @@
 	<div id="valid">
 		<!-- Es ist nicht erlaubt, Änderungen an der Copyright-Zeile vorzunehmen. -->
 		<div id="designed_by">
-			&copy; 2011 Till Affeldt
+			&copy; 2017 <a href="source.php">Till Affeldt und Skrupel-Community</a>
 <?php
     include 'styles/design.php';
 
