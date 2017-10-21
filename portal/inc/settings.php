@@ -1,4 +1,6 @@
 <?php
+require_once 'inc/_db.php';
+
 $sql = mysql_query("SELECT * FROM $skrupel_portal LIMIT 1");
 while ($row = mysql_fetch_object($sql)) {
     $portal_version = $row->version;
@@ -24,8 +26,7 @@ while ($row = mysql_fetch_object($sql)) {
     $impressum_settings_haftung = substr($impressum_settings, 0, 1);
     $impressum_settings_facebook = substr($impressum_settings, 1, 2);
 }
-//echo mysql_error();
 
-if (!isset($impressum_email) || empty ($impressum_email) || $impressum_email == "") {
+if (!isset($impressum_email) || empty($impressum_email) || $impressum_email == '') {
     $impressum_email = $absenderemail;
 }
