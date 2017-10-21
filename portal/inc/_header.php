@@ -218,7 +218,7 @@ header('Pragma: cache');
                 <ul class="menu">
                     <li><a href="admin.php">&Uuml;bersicht</a></li>
                     <li><a href="admin_offenbarung.php">Offenbarung</a></li>
-                    <li><a href="admin_feedback.php">Feedback</a></li>
+                    <li><a href="admin_feedback.php" target="_blank">Feedback</a></li>
                 </ul>
 <?php endif; ?>
                 <h3>Community</h3>
