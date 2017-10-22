@@ -44,35 +44,36 @@ header('Cache-Control: store, cache, max-age=5');
 header('Pragma: cache');
 ?>
 <!DOCTYPE html>
-<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<html dir="ltr">
 
 <head profile="http://dublincore.org/documents/dcq-html/">
-    <title><?php echo $servername; ?> - <?php echo $seitentitel; if (isset($page_name)){ echo ' - '.$page_name; } ?></title>
-    <meta name="DC.title" content="<?php echo $servername; if (isset($page_name)){ echo ' - '.$page_name; }?>">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-    <meta name="DC.subject" content="Kostenloses Weltraum-Browsergame." />
-    <meta name="DC.type" content="InteractiveResource" scheme="DCTERMS.DCMIType" />
-    <meta name="DC.type" content="Browsergame" />
-    <meta name="DC.format" content="text/html" scheme="DCTERMS.IMT" />
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $encoding; ?>" />
+    <meta http-equiv="content-language" content="de" />
+    <title><?php echo $servername; ?> - <?php echo $seitentitel; if (isset($page_name)) { echo ' - '.$page_name; } ?></title>
+    <meta name="keywords" content="<?php echo $servername.', '.$keywords; ?>" />
+    <meta name="description" content="<?php echo str_replace("\r\n", ' ', $description); ?>" />
     <meta name="author" content="Till Affeldt" />
+    <meta name="license" content="GNU GPL" />
+    <meta name="robots" content="index, follow" />
+    <meta name="DC.title" content="<?php echo $servername; if (isset($page_name)) { echo ' - '.$page_name; }?>">
     <meta name="DC.publisher" content="Till Affeldt" />
     <meta name="DC.constributor" content="Till Affeldt" />
     <meta name="DC.constributor" content="Bernd Kantoks" />
     <meta name="DC.constributor" content="Tiramon" />
-    <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="<?php echo $servername.', '.$keywords; ?>" />
-    <meta name="description" content="<?php echo str_replace("\r\n", ' ', $description); ?>" />
-    <meta http-equiv="imagetoolbar" content="no" />
-    <meta http-equiv="content-language" content="de" />
+    <meta name="DC.subject" content="Kostenloses Weltraum-Browsergame." />
+    <meta name="DC.type" content="InteractiveResource" scheme="DCTERMS.DCMIType" />
+    <meta name="DC.type" content="Browsergame" />
+    <meta name="DC.format" content="text/html" scheme="DCTERMS.IMT" />
     <meta name="DC.language" content="de" scheme="DCTERMS.RFC3066" />
     <meta name="DC.source" content="https://github.com/kantoks/skrupel" scheme="DCTERMS.URI" />
     <meta name="DC.relation" content="https://github.com/kantoks/skrupel" scheme="DCTERMS.URI" />
-    <meta name="license" content="GNU GPL" />
     <meta name="DC.rights" content="https://github.com/skrupel/skrupel-portal/blob/master/LICENSE.txt" scheme="DCTERMS.URI" />
     <meta name="DC.rights" content="http://www.space-pirates.zx9.de/portal/agb.php" scheme="DCTERMS.URI" />
-	<meta name="DC.identifer" content="http://<?php echo $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']; ?>" />
+    <meta name="DC.identifer" content="http://<?php echo $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']; ?>" />
+
+    <link rel="stylesheet" href="font/font.css" type="text/css" />
+    <link rel="stylesheet" href="styles/<?php echo $_SESSION['layout']; ?>/css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" type="text/css" href="shadowbox/shadowbox.css">
     <script type="text/javascript" src="shadowbox/shadowbox.js"></script>
@@ -88,9 +89,6 @@ header('Pragma: cache');
         }
     </script>
 <?php endif; ?>
-    <link rel="stylesheet" href="font/font.css" type="text/css" />
-    <link href="styles/<?php echo $_SESSION['layout']; ?>/css/style.css" rel="stylesheet" type="text/css" />
-
 <?php if (preg_match('#messages.php#is', $_SERVER['PHP_SELF']) == 1 && $_GET['fu'] == 3): ?>
     <script language="JavaScript" type="application/javascript">
     // <![CDATA[
