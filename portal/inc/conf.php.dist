@@ -1,16 +1,13 @@
 <?php
 
-  // Pfadangaben
-  $skrupel_path = "..";							// Pfad zum Skrupel-Verzeichnis
+// Pfadangaben
+$skrupel_path = "..";							// Pfad zum Skrupel-Verzeichnis
 
-  // Tabellen-Namen
-  $skrupel_portal = "skrupel_portal";						// Tabellenname der Portal-Konfiguration
-  $skrupel_portal_games = "skrupel_portal_games";					// Tabellenname der wartenden Spiele
-  $skrupel_portal_linklist = "skrupel_portal_linklist";					// Tabellenname der Linkliste
-  $skrupel_portal_messages = "skrupel_portal_messages";				// Tabellenname des PN-Systems
+// Tabellen-Namen
+$skrupel_portal = "skrupel_portal";						// Tabellenname der Portal-Konfiguration
+$skrupel_portal_games = "skrupel_portal_games";			// Tabellenname der wartenden Spiele
+$skrupel_portal_linklist = "skrupel_portal_linklist";	// Tabellenname der Linkliste
+$skrupel_portal_messages = "skrupel_portal_messages";	// Tabellenname des PN-Systems
 
-  // Administrator
-  define("ADMIN", "PseudoPsycho");						// Benutzer-Name des Administrators
-
-include "inc/_db.php";
-require_once "inc/settings.php";
+// Administrator
+define("ADMIN", "admin");						        // Benutzer-Name des Administrators

@@ -2,6 +2,10 @@
 require_once 'inc/conf.php';
 require_once $skrupel_path.'/inc.conf.php';
 require_once $skrupel_path.'/inhalt/inc.hilfsfunktionen.php';
+
+require_once 'inc/_db.php';
+require_once 'inc/settings.php';
+
 session_start();
 
 if (!isset($_SESSION['layout'])) {
@@ -24,9 +28,6 @@ if (!file_exists('styles/'.$_SESSION['layout'].'/css/style.css')) {
         $_SESSION['layout'] = $design[0]['path'];
     }
 }
-
-require_once 'inc/_db.php';
-require_once 'inc/settings.php';
 
 if (isset($_SESSION['user_id'])) {
     $sql = "SELECT user.uid, spiele.sid FROM $skrupel_user AS user LEFT JOIN $skrupel_spiele AS spiele ON phase = 0 AND (user.id = spieler_1 OR user.id = spieler_2 OR user.id = spieler_3 OR user.id = spieler_4 OR user.id = spieler_5 OR user.id = spieler_6 OR user.id = spieler_7 OR user.id = spieler_8 OR user.id = spieler_9 OR user.id = spieler_10) WHERE user.id=\"{$_SESSION['user_id']}\" GROUP BY user.id";

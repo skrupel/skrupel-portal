@@ -248,9 +248,7 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
             fwrite($fh, "\$skrupel_portal_linklist = '{$_POST['skrupel_portal_linklist']}';\n");
             fwrite($fh, "\$skrupel_portal_messages = '{$_POST['skrupel_portal_messages']}';\n\n");
             fwrite($fh, "// Administrator\n");
-            fwrite($fh, "define('ADMIN', '$admin_login');\n\n\n");
-            fwrite($fh, "include 'inc/_db.php';\n");
-            fwrite($fh, "require_once 'inc/settings.php';\n");
+            fwrite($fh, "define('ADMIN', '$admin_login');\n");
             fclose($fh);
             echo '<p><span style="color: lightgreen">Konfigurationsdatei erfolgreich geschrieben.</span></p>';
 
