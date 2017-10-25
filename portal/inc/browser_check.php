@@ -1,24 +1,22 @@
 <?php
-  $browser = getenv("HTTP_USER_AGENT");
-  
-  if ( preg_match("/^Mozilla\/.*?Firefox\/\d\.\d/",$browser) )
-    $browser = "mozilla";
-  elseif ( preg_match("/^Mozilla\/.*?Gecko\/\d{8}/",$browser) )
-    $browser = "mozilla";
-  elseif ( preg_match("/^Mozilla\/.*?\(compatible; MSIE/",$browser) )
-    $browser = "ie";
-  elseif ( preg_match("/^Mozilla\/.*?\(compatible; Konqueror/",$browser) )
-    $browser = "konqueror";
-  elseif ( preg_match("/^Opera\/\d\.\d/" , $browser ) )
-    $browser = "opera";
-  elseif ( preg_match("/^Mozilla\/.*?Safari/",$browser) )
-    $browser = "safari";
-  //wird eh als mozilla erkannt
-  //elseif ( preg_match("/^Mozilla\/.*?Epiphany/", $browser ) )
-  //  $browser = "epiphany";
-  else
-    $browser = "ka";
-  //echo "aaa".$browser;
+$browser = getenv('HTTP_USER_AGENT');
+
+if (preg_match("/^Mozilla\/.*?Firefox\/\d\.\d/", $browser)) {
+    $browser = 'mozilla';
+} elseif (preg_match("/^Mozilla\/.*?Gecko\/\d{8}/", $browser)) {
+    $browser = 'mozilla';
+} elseif (preg_match("/^Mozilla\/.*?\(compatible; MSIE/", $browser)) {
+    $browser = 'ie';
+} elseif (preg_match("/^Mozilla\/.*?\(compatible; Konqueror/", $browser)) {
+    $browser = 'konqueror';
+} elseif (preg_match("/^Opera\/\d\.\d/", $browser)) {
+    $browser = 'opera';
+} elseif (preg_match("/^Mozilla\/.*?Safari/", $browser)) {
+    $browser = 'safari';
+} else {
+    $browser = 'ka';
+}
+
 /*
  Mozilla Firefox
  Mozilla/5.0 (Windows; U; Windows NT5.1;de-DE;rv;:1.7.12) Gecko/20050919 Firefox/1.07
@@ -42,6 +40,4 @@
 
  Safari
  Mozilla/5.0 (Macintosh; U; Intel Mac OS X; de-de) AppleWebKit/419 (KHTML, like Gecko) Safari/419.3
-
- */
-?>
+*/

@@ -1,6 +1,6 @@
 <?php
-include "inc/conf.php";
-include "inc/_header.php";
+include 'inc/conf.php';
+include 'inc/_header.php';
 ?>
 <center><table border="0" cellspacing="0" cellpadding="4"><tr><td><h1>Neues Spiel erstellen</h1></td></tr></table></center>
 
@@ -23,5 +23,4 @@ Das Spiel wird erstellt.
   document.getElementById('formular').submit();
  </script>
 <?php
-include "inc/_footer.php";
-?>
+include 'inc/_footer.php';
