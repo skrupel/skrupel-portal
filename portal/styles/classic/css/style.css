@@ -1,4 +1,4 @@
-﻿/* CSS layout */
+/* CSS layout */
 body {
     margin: 0;
     padding: 0;
@@ -38,6 +38,30 @@ h4, h5, h6 {
     font-family: pdark, Verdana, sans-serif;
 }
 
+th {
+    font-weight: bold;
+}
+
+.info th {
+    text-align: left;
+    vertical-align: bottom;
+    padding-top: 1.2em
+}
+
+dd {
+    margin: 4px 0 4px 10px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+hr {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #555;
+}
+
 input, textarea, select, button {
     color: #ccc;
     font-family: Verdana, sans-serif;
@@ -51,14 +75,8 @@ button {
     padding: 3px 8px;
 }
 
-hr {
-    border-style: solid;
-    border-width: 2px;
-    border-color: #555;
-}
-
 #wrapper {
-    width: 1020px;
+    width: 1100px;
     margin: 0 auto;
     padding: 0;
 }
