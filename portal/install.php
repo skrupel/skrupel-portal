@@ -358,7 +358,7 @@ $skrupel_portal_messages = 'skrupel_portal_messages';
                 mysql_query($sql, $conn);
             }
 
-            if (2 < $_POST['version']) {
+            if ($_POST['version'] < 2) {
                 // Neuinstallation, Tiramon-Portal
 
                 $sql = "CREATE TABLE IF NOT EXISTS `{$_POST['skrupel_portal_linklist']}` (
